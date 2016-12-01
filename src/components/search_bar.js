@@ -19,9 +19,10 @@ class SearchBar extends Component {
 		)
 	}
 
-// whenever input changes - run this function ** moved this function into line 6 **
+// whenever input changes - run this function ** moved this function into <input > **
 // onInputChange(event) {
-// 		console.log(event.target.value);
+//		this.setState({ term: event.target.value })
+// 		console.log(event.target.value)
 // 	}
 
 }
