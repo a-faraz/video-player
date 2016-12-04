@@ -6,6 +6,7 @@ import VideoList from './components/video_list';
 
 const API_KEY = '***';
 
+
 // Create a new component. This component should produce some HTML
 class App extends Component {
 
@@ -14,7 +15,7 @@ class App extends Component {
 
 		this.state = { videos: [] };
 
-		YTSearch({key: API_KEY, term: 'surfboards'}, (videos) => {
+		YTSearch({key: API_KEY, term: 'james harden'}, (videos) => {
 			// ES6 syntax for this.setState({videos: videos})
 			this.setState({ videos });
 		})
