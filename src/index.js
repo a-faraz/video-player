@@ -8,7 +8,6 @@ import VideoDetail from './components/video_detail';
 const API_KEY = '***';
 
 
-
 // Create a new component. This component should produce some HTML
 class App extends Component {
 
@@ -20,7 +19,7 @@ class App extends Component {
 			selectedVideo: null
 		};
 
-		this.videoSearch('youtube')
+		this.videoSearch('desi drama')
 	}
 
 
@@ -37,9 +36,14 @@ class App extends Component {
 	}
 
 	render() {
+
+		// throttle/debounce function to only be able to search once ever 300 ms
+		const videoSearchBounced = _.debounce((term) => {this.videoSearch(term)}, 300)
+
 		return (
 			<div>
-				<SearchBar onSearchTermChange={term => this.videoSearch(term) }/>
+				<div className="page-title">TumTube</div>
+				<SearchBar onSearchTermChange={videoSearchBounced}/>
 				<VideoDetail video={this.state.selectedVideo} />
 				<VideoList 
 					onVideoSelect={selectedVideo => this.setState({selectedVideo}) }

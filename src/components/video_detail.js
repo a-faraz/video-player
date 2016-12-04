@@ -6,7 +6,7 @@ const VideoDetail = ({video}) => {
 // some parent objects cannot fetch data fast enough to handle the needs of the child object
 // so therefore we provide a test before grabbing the id of the prop
 	if(!video) {
-		return <div>Search something...</div>
+		return <div>loading...</div>
 	}
 	
 	const videoId = video.id.videoId;
