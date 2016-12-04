@@ -2,7 +2,7 @@ import React from 'react'
 
 	// same as const video = props.video
 	// props.video comes from video_list component
-	const VideoListItem = ({video}) => {
+const VideoListItem = ({video}) => {
 
 	console.log(video);
 	const title = video.snippet.title
