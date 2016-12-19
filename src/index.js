@@ -7,7 +7,6 @@ import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
 const API_KEY = '***';
 
-
 // Create a new component. This component should produce some HTML
 class App extends Component {
 
@@ -19,7 +18,7 @@ class App extends Component {
 			selectedVideo: null
 		};
 
-		this.videoSearch('desi drama')
+		this.videoSearch('nba')
 	}
 
 
@@ -41,8 +40,8 @@ class App extends Component {
 		const videoSearchBounced = _.debounce((term) => {this.videoSearch(term)}, 300)
 
 		return (
-			<div>
-				<div className="page-title">TumTube</div>
+			<div className="bod">
+				<div className="page-title">Hi-Lights</div>
 				<SearchBar onSearchTermChange={videoSearchBounced}/>
 				<VideoDetail video={this.state.selectedVideo} />
 				<VideoList 
